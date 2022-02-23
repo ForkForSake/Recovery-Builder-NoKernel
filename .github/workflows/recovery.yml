@@ -14,8 +14,8 @@ on:
     types: [started]
 
 env:
-  MANIFEST: https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git
-  MANIFEST_BRANCH: twrp-11
+  MANIFEST: https://github.com/omnirom/android_bootable_recovery.git
+  MANIFEST_BRANCH: android-11
   DEVICE: kyoto
   DT_LINK: https://github.com/forforksake/android_device_motorola_kyoto
   DT_PATH: device/motorola/kyoto

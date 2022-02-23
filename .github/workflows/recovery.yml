@@ -14,8 +14,8 @@ on:
     types: [started]
 
 env:
-  MANIFEST: https://gitlab.com/OrangeFox/Manifest.git
-  MANIFEST_BRANCH: fox_9.0
+  MANIFEST: https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git
+  MANIFEST_BRANCH: twrp-11
   DEVICE: kyoto
   DT_LINK: https://github.com/forforksake/android_device_motorola_kyoto
   DT_PATH: device/motorola/kyoto

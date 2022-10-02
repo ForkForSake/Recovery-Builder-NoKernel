@@ -14,7 +14,7 @@ on:
     types: [started]
 
 env:
-  MANIFEST: https://github.com/PitchBlackRecoveryProject/manifest_pb -b android-11.0
+  MANIFEST: https://github.com/PitchBlackRecoveryProject/manifest_pb -b android-12.1
   DEVICE: kyoto
   DT_LINK: https://github.com/forforksake/android_device_motorola_kyoto-pbrp
   DT_PATH: device/motorola/kyoto

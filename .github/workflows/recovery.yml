@@ -17,7 +17,7 @@ env:
   MANIFEST: https://github.com/forforksake/platform_manifest_twrp_omni -b twrp-9.0
   DEVICE: mustang
   DT_LINK: https://github.com/forforksake/android_device_amazon_mustang
-  DT_PATH: device/amazon/kyoto
+  DT_PATH: device/amazon/mustang
   TARGET: recoveryimage
   VENDOR: amazon
   TZ: Europe/London

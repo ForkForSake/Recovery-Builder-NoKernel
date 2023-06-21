@@ -14,12 +14,12 @@ on:
     types: [started]
 
 env:
-  MANIFEST: https://github.com/PitchBlackRecoveryProject/manifest_pb -b android-12.1
-  DEVICE: kyoto
-  DT_LINK: https://github.com/forforksake/android_device_motorola_kyoto-pbrp
-  DT_PATH: device/motorola/kyoto
-  TARGET: bootimage
-  VENDOR: motorola
+  MANIFEST: https://github.com/forforksake/platform_manifest_twrp_omni -b twrp-9.0
+  DEVICE: mustang
+  DT_LINK: https://github.com/forforksake/android_device_amazon_mustang
+  DT_PATH: device/amazon/kyoto
+  TARGET: recoveryimage
+  VENDOR: amazon
   TZ: Europe/London
   
   
@@ -55,19 +55,19 @@ jobs:
        - name: Build
          run: |
               cd work
-              . build/envsetup.sh && lunch omni_$DEVICE-eng && export ALLOW_MISSING_DEPENDENCIES=true && mka pbrp
+              . build/envsetup.sh && lunch omni_$DEVICE-eng && export ALLOW_MISSING_DEPENDENCIES=true && mka recoveryimage
              
        - name: Upload recovery image 
          run: |
               cd work/out/target/product/$DEVICE
               curl -sL https://git.io/file-transfer | sh
-              ./transfer gof boot.img && ./transfer gof ramdisk-,recovery.img
-              ./transfer wet boot.img && ./transfer wet ramdisk-recovery.img
+              ./transfer gof recovery.img && ./transfer gof ramdisk-recovery.img
+              ./transfer wet recovery.img && ./transfer wet ramdisk-recovery.img
 
        - uses: actions/upload-artifact@v2
          with:
           name: recoveryimage
-          path: work/out/target/product/*/boot.img
+          path: work/out/target/product/*/recovery.img
 
        - uses: actions/upload-artifact@v2
          with:
